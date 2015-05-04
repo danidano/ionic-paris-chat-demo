@@ -17,7 +17,6 @@ angular.module('starter')
         $scope.sendMessage = function(){
             var message = {
                 user: {
-                    avatar: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpf1/t31.0-1/p960x960/10981079_10205861576955866_5665945341985129249_o.jpg",
                     name: $scope.userName
                 },
                 content: $scope.message
@@ -30,6 +29,14 @@ angular.module('starter')
             ChatSrv.changeName($scope.userName).then(function(newName){
                 if(newName){
                     $scope.userName = newName;
+                }
+            });
+        };
+
+        $scope.messageActions = function(message){
+            ChatSrv.messageActions(message).then(function(action){
+                if(action === 'delete'){
+                    ChatSrv.deleteMessage($scope.messages, message);
                 }
             });
         };

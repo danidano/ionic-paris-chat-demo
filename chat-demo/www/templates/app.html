@@ -6,7 +6,7 @@
     </ion-nav-bar>
     <ion-content>
         <ion-list>
-            <ion-item class="item-avatar" ng-repeat="message in messages">
+            <ion-item class="item-avatar" ng-repeat="message in messages" on-hold="messageActions(message)">
                 <img ng-src="https://sigil.cupcake.io/{{message.user.name}}">
                 <h2>{{message.user.name}}</h2>
                 <p>{{message.content}}</p>
