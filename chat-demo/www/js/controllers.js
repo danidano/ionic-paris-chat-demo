@@ -5,7 +5,7 @@ angular.module('starter')
 
     .controller('AppCtrl', function($scope, ChatSrv, $ionicScrollDelegate) {
         'use strict';
-
+        $scope.userName = "Anonymous";
 
         $scope.messages = ChatSrv.getMessages();
 
@@ -18,12 +18,20 @@ angular.module('starter')
             var message = {
                 user: {
                     avatar: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpf1/t31.0-1/p960x960/10981079_10205861576955866_5665945341985129249_o.jpg",
-                    name: 'Daniel'
+                    name: $scope.userName
                 },
                 content: $scope.message
             };
             ChatSrv.sendMessage($scope.messages, message);
             $scope.message = '';
+        };
+
+        $scope.changeUserName = function(){
+            ChatSrv.changeName($scope.userName).then(function(newName){
+                if(newName){
+                    $scope.userName = newName;
+                }
+            });
         };
 
     });
