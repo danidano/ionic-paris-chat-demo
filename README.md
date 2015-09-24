@@ -1,6 +1,6 @@
 # ionic-paris-chat-demo
 
-Ce projet de démo a été réalisé dans le cadre d'un meetup sur la technologie Ionic : http://www.meetup.com/ionic-Paris/events/222179259/
+Ce projet de démo a été réalisé dans le cadre d'un meetup sur la présentation du framework Ionic : http://www.meetup.com/ionic-Paris/events/222179259/
 
 Voici le lien vers les slides de la présentation : 
 
